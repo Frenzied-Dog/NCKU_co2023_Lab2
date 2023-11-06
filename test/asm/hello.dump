@@ -1,0 +1,93 @@
+
+hello.elf:     file format elf32-littleriscv
+hello.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+0x70000003 off    0x000010b0 vaddr 0x00000000 paddr 0x00000000 align 2**0
+         filesz 0x0000001a memsz 0x00000000 flags r--
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x000000b0 memsz 0x000000b0 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b0  00000000  00000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  00000000  00000000  000010b0  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    df *ABS*	00000000 ccZeoR7H.o
+000000b0 g       .text	00000000 text_end
+00000000 g       .text	00000000 _start
+000000b0 g       .text	00000000 bss_end
+000000b0 g       .text	00000000 rodata_end
+000000b0 g       .text	00000000 data_end
+
+
+Contents of section .text:
+ 0000 13051000 93058004 73000000 13051000  ........s.......
+ 0010 93055006 73000000 13051000 9305c006  ..P.s...........
+ 0020 73000000 13051000 9305c006 73000000  s...........s...
+ 0030 13051000 9305f006 73000000 13051000  ........s.......
+ 0040 9305c002 73000000 13051000 93050002  ....s...........
+ 0050 73000000 13051000 93057005 73000000  s.........p.s...
+ 0060 13051000 9305f006 73000000 13051000  ........s.......
+ 0070 93052007 73000000 13051000 9305c006  .. .s...........
+ 0080 73000000 13051000 93054006 73000000  s.........@.s...
+ 0090 13051000 93051002 73000000 13051000  ........s.......
+ 00a0 9305a000 73000000 13050000 73000000  ....s.......s...
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00100513          	addi	a0,zero,1
+   4:	04800593          	addi	a1,zero,72
+   8:	00000073          	ecall
+   c:	00100513          	addi	a0,zero,1
+  10:	06500593          	addi	a1,zero,101
+  14:	00000073          	ecall
+  18:	00100513          	addi	a0,zero,1
+  1c:	06c00593          	addi	a1,zero,108
+  20:	00000073          	ecall
+  24:	00100513          	addi	a0,zero,1
+  28:	06c00593          	addi	a1,zero,108
+  2c:	00000073          	ecall
+  30:	00100513          	addi	a0,zero,1
+  34:	06f00593          	addi	a1,zero,111
+  38:	00000073          	ecall
+  3c:	00100513          	addi	a0,zero,1
+  40:	02c00593          	addi	a1,zero,44
+  44:	00000073          	ecall
+  48:	00100513          	addi	a0,zero,1
+  4c:	02000593          	addi	a1,zero,32
+  50:	00000073          	ecall
+  54:	00100513          	addi	a0,zero,1
+  58:	05700593          	addi	a1,zero,87
+  5c:	00000073          	ecall
+  60:	00100513          	addi	a0,zero,1
+  64:	06f00593          	addi	a1,zero,111
+  68:	00000073          	ecall
+  6c:	00100513          	addi	a0,zero,1
+  70:	07200593          	addi	a1,zero,114
+  74:	00000073          	ecall
+  78:	00100513          	addi	a0,zero,1
+  7c:	06c00593          	addi	a1,zero,108
+  80:	00000073          	ecall
+  84:	00100513          	addi	a0,zero,1
+  88:	06400593          	addi	a1,zero,100
+  8c:	00000073          	ecall
+  90:	00100513          	addi	a0,zero,1
+  94:	02100593          	addi	a1,zero,33
+  98:	00000073          	ecall
+  9c:	00100513          	addi	a0,zero,1
+  a0:	00a00593          	addi	a1,zero,10
+  a4:	00000073          	ecall
+  a8:	00000513          	addi	a0,zero,0
+  ac:	00000073          	ecall
